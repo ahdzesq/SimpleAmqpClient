@@ -141,6 +141,12 @@ class SIMPLEAMQPCLIENT_EXPORT Channel : boost::noncopyable {
   static ptr_t Open(const OpenOpts &opts);
 
   /**
+   * @brief closes the channel
+   * 
+   */
+  void Close();
+
+  /**
    * Creates a new channel object
    *
    * Creates a new connection to an AMQP broker using the supplied parameters

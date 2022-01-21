@@ -466,6 +466,10 @@ Channel::ChannelImpl *Channel::OpenSecureChannel(
 Channel::Channel(ChannelImpl *impl) : m_impl(impl) {}
 
 Channel::~Channel() {
+}
+
+void Channel::Close()
+{
   amqp_connection_close(m_impl->m_connection, AMQP_REPLY_SUCCESS);
   amqp_destroy_connection(m_impl->m_connection);
 }
